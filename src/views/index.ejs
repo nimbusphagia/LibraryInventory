@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <title>Library Inventory</title>
+</head>
+
+<body>
+  <%-include ('navbar')%>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Published by</th>
+        <th>Year</th>
+        <th>ISBN</th>
+      </tr>
+      <% books.forEach((b)=>{ %>
+        <tr class="bookRow">
+          <td>
+            <%=b.title%>
+          </td>
+          <td>
+            <%=b.author_id %>
+          </td>
+          <td>
+            <%=b.publisher_id %>
+          </td>
+          <td>
+            <%=b.year ?? '' %>
+          </td>
+          <td>
+            <%=b.isbn ?? '' %>
+          </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "libraryinventory",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimbusphagia/LibraryInventory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nimbusphagia/LibraryInventory/issues"
+  },
+  "homepage": "https://github.com/nimbusphagia/LibraryInventory#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "pg": "^8.17.1"
+  }
+}

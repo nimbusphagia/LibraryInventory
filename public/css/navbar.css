@@ -1,0 +1,31 @@
+.navbar {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.navbar ul {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--gap);
+
+}
+
+.navbar li {
+  color: white;
+}
+
+.navbar a {
+  display: block;
+}
+
+.navbar a:hover {
+  color: grey;
+}
+
+.navbar img {
+  width: 30px;
+}
