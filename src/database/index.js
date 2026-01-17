@@ -22,4 +22,15 @@ async function createBook({
   };
   await poolQuery(query.text, query.values);
 }
-export { poolQuery, createBook };
+async function deleteBook(bookId) {
+  await poolQuery('DELETE FROM book WHERE id = $1', [bookId]);
+}
+async function validateAccess(password) {
+  const result = await poolQuery('SELECT * FROM admin WHERE id = 1 AND password = $1', [password]);
+  if (result.rows.length === 1) {
+    console.log(result.rows.length);
+    return true
+  }
+  return false;
+}
+export { poolQuery, createBook, deleteBook, validateAccess };

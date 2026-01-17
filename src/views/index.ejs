@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/bookForm.css">
+  <link rel="stylesheet" href="css/passwordPrompt.css">
   <title>Library Inventory</title>
 </head>
 
@@ -59,34 +60,19 @@
             <p>
               <%=b.isbn ?? '' %>
             </p>
+            <div class="book-utilities">
+              <button class="delete-btn" type="button" data-book-id="<%=b.id%>"><img src="/icons/delete.png"
+                  alt="click to delete"></button>
+            </div>
           </div>
           <% }) %>
 
       </div>
     </div>
     <%-include('veil')%>
-      <%-include('bookForm',{authors})%>
-        <script>
-          const navBtn = document.querySelector('.toggle-active');
-          const formBtn = document.querySelector('.return-btn');
-          function enableToggle(btn) {
-            if (!btn) return;
-            btn.addEventListener('click', () => {
-              const elements = document.querySelectorAll('.inactive, .active');
-
-              elements.forEach(el => {
-                if (el.classList.contains('inactive')) {
-                  el.classList.replace('inactive', 'active');
-                } else {
-                  el.classList.replace('active', 'inactive');
-                }
-              });
-            });
-          }
-
-          enableToggle(formBtn);
-          enableToggle(navBtn);
-        </script>
+      <%-include('passwordPrompt' )%>
+        <%-include('bookForm',{authors})%>
+          <script src="/js/indexUtilities.js"></script>
 
 </body>
 

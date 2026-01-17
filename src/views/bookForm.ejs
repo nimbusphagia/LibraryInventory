@@ -1,5 +1,6 @@
-<form class='book-form modal inactive' method="post">
+<form class='book-form modal inactive' method="POST">
   <h2>Add a new book</h2>
+  <input type="hidden" name="action" value='create' />
   <div class="form-item">
     <label for="title"> Title</label>
     <input type="text" id="title" name="title" required>
@@ -7,7 +8,7 @@
 
   <div class="form-item">
     <label for="author">Author</label>
-    <select id="author" name="author" required>
+    <select id="author" name="author_id" required>
       <option value="">-- Select an author --</option>
       <% authors.forEach((a)=>{ %>
         <option value=<%=a.id%>> <%=a.first_name%>
@@ -19,9 +20,12 @@
 
   <div class="form-item">
     <label for="publisher">Publisher</label>
-    <select id="publisher" name="publisher" required>
+    <select id="publisher" name="publisher_id" required>
       <option value="">-- Select a publisher --</option>
-      <option value="penguin">Penguin Random House</option>
+      <% publishers.forEach((p)=>{ %>
+        <option value=<%=p.id%>> <%=p.publisher_name%>
+        </option>
+        <%}) %>
     </select>
   </div>
 

@@ -11,6 +11,7 @@ const port = process.env.PORT;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Setup
+app.use(express.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
