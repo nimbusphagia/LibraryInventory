@@ -1,0 +1,17 @@
+<form class='author-form modal inactive' method="POST">
+  <h2>Add a new author</h2>
+  <input type="hidden" name="action" value='create' />
+  <div class="form-item">
+    <label for="firstName"> First name</label>
+    <input type="text" id="firstName" name="first_name" required>
+  </div>
+
+  <div class="form-item">
+    <label for="lastName">Last name</label>
+    <input type="text" id="lastName" name="last_name" required>
+  </div>
+  <div class="buttons">
+    <button type="button" class="return-btn">return</button>
+    <button type="submit" class="add-btn">add</button>
+  </div>
+</form>

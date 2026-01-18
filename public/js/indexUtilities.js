@@ -1,48 +1,38 @@
+// Utilities
+function toggleVisibility(node) {
+  node.classList.contains('inactive')
+    ? node.classList.replace('inactive', 'active')
+    : node.classList.replace('active', 'inactive');
+}
+
+
+// Main
 const navBtn = document.querySelector('.toggle-active');
 const formBtn = document.querySelector('.return-btn');
+const createForm = document.querySelector('.book-form');
 const booksContainer = document.querySelector('.books-container');
-function toggleActive(elements = []) {
-  elements.forEach(e => {
-    if (e.classList.contains('inactive')) {
-      e.classList.replace('inactive', 'active');
-    } else {
-      e.classList.replace('active', 'inactive');
-    }
-  });
-}
-function enableBtn(btn, selector) {
+const modal = document.querySelector('.form-delete');
+const veil = document.querySelector('.veil');
+const bookIdInput = document.getElementById('form-book-id');
+const cancelBtn = document.querySelector('.cancel-delete-btn');
+
+// Create Form toggle
+[navBtn, formBtn].forEach(btn => {
   if (!btn) return;
-  btn.addEventListener('click', () => {
-    const elements = document.querySelectorAll(selector);
-    console.log(elements);
-    toggleActive(elements);
-  });
-}
+  btn.addEventListener('click', () => [createForm, veil].forEach(toggleVisibility));
+});
 
 
-enableBtn(formBtn, '.veil, .book-form');
-enableBtn(navBtn, '.veil, .book-form');
-
-const modal = document.querySelector(".form-delete");
-const veil = document.querySelector(".veil");
-const bookIdInput = document.getElementById("form-book-id");
-const cancelBtn = document.querySelector(".cancel-delete-btn");
-
-booksContainer.addEventListener("click", (e) => {
-  const deleteBtn = e.target.closest(".delete-btn");
+// Delete Form toggle, passing id to form
+booksContainer.addEventListener('click', (e) => {
+  const deleteBtn = e.target.closest('.delete-btn');
   if (!deleteBtn) return;
 
-  const bookId = deleteBtn.dataset.bookId;
-
-  bookIdInput.value = bookId;
-
-  modal.classList.replace("inactive", 'active');
-  veil.classList.replace("inactive", 'active');
+  bookIdInput.value = deleteBtn.dataset.bookId;
+  [modal, veil].forEach(toggleVisibility);
 });
 
-cancelBtn.addEventListener("click", () => {
-  modal.classList.replace('active', "inactive");
-  veil.classList.replace('active', "inactive");
+cancelBtn.addEventListener('click', () => {
+  [modal, veil].forEach(toggleVisibility);
 });
-
 

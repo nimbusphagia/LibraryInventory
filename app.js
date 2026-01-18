@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 //Routers
 import { indexRouter } from './src/routes/index.js';
 import { bookRouter } from './src/routes/book.js';
+import { authorsRouter } from './src/routes/authors.js';
 
 const app = express();
 const port = process.env.PORT;
@@ -21,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(indexRouter);
 app.use(bookRouter);
+app.use(authorsRouter);
+
 //Listen
 app.listen(port, (err) => {
   if (err) {

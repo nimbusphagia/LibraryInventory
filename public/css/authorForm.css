@@ -1,4 +1,4 @@
-.book-form {
+.author-form {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -6,10 +6,10 @@
   padding: 25px;
   box-shadow: var(--box);
   border-radius: 8px;
-  transform: translate(-50%, 10%);
+  transform: translate(-50%, 50%);
 }
 
-.book-form h2 {
+.author-form h2 {
   text-align: center;
 }
 
@@ -28,13 +28,13 @@
   flex-grow: 1;
 }
 
-.book-form .buttons {
+.author-form .buttons {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.book-form button {
+.author-form button {
   padding: 10px 20px;
   color: white;
   font-weight: 550;

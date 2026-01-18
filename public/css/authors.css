@@ -1,0 +1,70 @@
+header {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.authors-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authors-utilities {
+  display: flex;
+  width: 100%;
+}
+
+.authors-utilities {
+  justify-content: space-between;
+
+}
+
+.authors-counter {
+  display: flex;
+  gap: 10px;
+}
+
+.authors-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-item-wrapper {
+  padding: 8px;
+}
+
+.author-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 15px;
+  line-height: 1;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+.author-item p {
+  margin: auto;
+}
+
+.author-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-btns img {
+  width: 17px;
+  aspect-ratio: 1 / 1;
+}

@@ -8,6 +8,7 @@ const valForm = document.querySelector('.validator form');
 const valVeil = document.querySelector('.password-veil');
 const cancelValBtn = document.querySelector('.cancel-btn');
 const submitBtn = document.querySelector('.submit-btn');
+
 function toggleVisibility(node) {
   if (node.classList.contains('inactive')) {
     node.classList.replace('inactive', 'active');

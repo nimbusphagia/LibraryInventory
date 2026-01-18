@@ -40,61 +40,40 @@ button:hover {
   transform: scale(1.03);
 }
 
-.index-header {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  padding: 20px;
-  gap: 20px;
+.modal {
+  position: absolute;
+  background-color: white;
+  z-index: 1001;
+  top: 10%;
+  left: 50%;
 }
 
-.book-list {
+.veil,
+.password-veil {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  /* Hidden by default */
   align-items: center;
+  justify-content: center;
 }
 
-.index-utilities {
+.veil {
+  z-index: 1000;
+}
+
+.password-veil {
+  z-index: 2000;
+}
+
+.active {
   display: flex;
-  width: 100%;
 }
 
-.index-utilities {
-  justify-content: space-between;
-
-}
-
-.book-counter {
-  display: flex;
-  gap: 10px;
-}
-
-.books-container {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.list-header,
-.book-item {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr) 0.5fr;
-  text-align: center;
-  align-items: center;
-  line-height: 1;
-  width: 100%;
-}
-
-.book-item {
-  box-shadow: var(--box);
-  border-radius: 10px;
-  padding: 3px 0;
-}
-
-.book-item img {
-  width: 20px;
+.inactive {
+  display: none;
 }
