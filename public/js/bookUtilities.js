@@ -6,7 +6,7 @@ const commitBtn = document.querySelector('.commit-btn');
 const validation = document.querySelector('.validator');
 const valForm = document.querySelector('.validator form');
 const valVeil = document.querySelector('.password-veil');
-const cancelValBtn = document.querySelector('.cancel-btn');
+const cancelValBtn = document.querySelector('.cancel-validation-btn');
 const submitBtn = document.querySelector('.submit-btn');
 
 function toggleVisibility(node) {

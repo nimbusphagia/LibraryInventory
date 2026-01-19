@@ -38,10 +38,15 @@
         <% authors.forEach((a)=>{ %>
           <div class="author-item-wrapper">
             <div class="author-item">
-              <p>
-                <%=a.first_name %>
+
+              <div class="name">
+                <p class="first">
+                  <%=a.first_name %>
+                </p>
+                <p class="last">
                   <%=a.last_name %>
-              </p>
+                </p>
+              </div>
               <div class="author-btns">
                 <button class="edit-btn" type="button" data-author-id="<%=a.id%>">
                   <img src="/icons/edit.png" alt="click to edit ">

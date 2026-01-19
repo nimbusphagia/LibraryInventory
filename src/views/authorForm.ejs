@@ -1,3 +1,4 @@
+<!--Create Form-->
 <form class='author-form modal inactive' method="POST">
   <h2>Add a new author</h2>
   <input type="hidden" name="action" value='create' />
@@ -13,5 +14,22 @@
   <div class="buttons">
     <button type="button" class="return-btn">return</button>
     <button type="submit" class="add-btn">add</button>
+  </div>
+</form>
+<!--Edit Form-->
+<form class='edit-author-form modal inactive' method="POST">
+  <h2>Edit author</h2>
+  <div class="form-item">
+    <label for="firstName"> First name</label>
+    <input type="text" id="firstName" name="first_name" required>
+  </div>
+
+  <div class="form-item">
+    <label for="lastName">Last name</label>
+    <input type="text" id="lastName" name="last_name" required>
+  </div>
+  <div class="buttons">
+    <button type="button" class="cancel-edit-btn">return</button>
+    <button type="button" class="send-edit-btn">edit</button>
   </div>
 </form>

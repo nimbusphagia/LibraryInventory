@@ -93,5 +93,10 @@ async function updateBook(bookInfo) {
     id
   ]);
 }
-
-export { bookJoinSql, poolQuery, createBook, deleteBook, validateAccess, getBookById, getBooks, getAuthors, getPublishers, updateBook };
+async function updateAuthor(id, first, last) {
+  await poolQuery('UPDATE author SET first_name = $2, last_name = $3 WHERE id = $1', [id, first, last]);
+}
+async function deleteAuthor(id) {
+  await poolQuery('DELETE FROM author WHERE id = $1', [id]);
+}
+export { bookJoinSql, poolQuery, createBook, deleteBook, validateAccess, getBookById, getBooks, getAuthors, getPublishers, updateBook, deleteAuthor, updateAuthor };

@@ -13,7 +13,7 @@ const createForm = document.querySelector('.book-form');
 const booksContainer = document.querySelector('.books-container');
 const modal = document.querySelector('.form-delete');
 const veil = document.querySelector('.veil');
-const bookIdInput = document.getElementById('form-book-id');
+const bookIdInput = document.getElementById('form-id');
 const cancelBtn = document.querySelector('.cancel-delete-btn');
 
 // Create Form toggle

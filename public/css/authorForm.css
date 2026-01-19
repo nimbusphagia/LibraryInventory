@@ -1,3 +1,4 @@
+.edit-author-form,
 .author-form {
   display: flex;
   flex-direction: column;
@@ -9,6 +10,7 @@
   transform: translate(-50%, 50%);
 }
 
+.edit-author-form h2,
 .author-form h2 {
   text-align: center;
 }
@@ -28,12 +30,14 @@
   flex-grow: 1;
 }
 
+.edit-author-form .buttons,
 .author-form .buttons {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
 
+.edit-author-form button,
 .author-form button {
   padding: 10px 20px;
   color: white;
@@ -43,10 +47,12 @@
 }
 
 .commit-btn,
-.add-btn {
+.add-btn,
+.send-edit-btn {
   background-color: black;
 }
 
-.return-btn {
+.return-btn,
+.cancel-edit-btn {
   background-color: grey;
 }

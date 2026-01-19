@@ -1,4 +1,4 @@
-import { getAuthors, poolQuery } from "../database/index.js"
+import { deleteAuthor, getAuthors, poolQuery, updateAuthor, validateAccess } from "../database/index.js"
 
 async function authorsGet(req, res) {
   const authors = await getAuthors();
@@ -12,6 +12,19 @@ async function authorsPost(req, res) {
       await poolQuery(`INSERT INTO author (first_name, last_name) 
         VALUES ($1, $2)`, [first_name, last_name]);
       return res.redirect('/authors');
+    } else if (action === 'delete') {
+      const admin = await validateAccess(req.body.password);
+      if (!admin) return res.redirect('/authors?deleted=false');
+      await deleteAuthor(Number(req.body.protectedId));
+      return res.redirect('/authors');
+    } else if (action === 'edit') {
+      const admin = await validateAccess(req.body.password);
+      if (!admin) return res.redirect('/authors?edited=false');
+      const { protectedId, first_name, last_name } = req.body;
+      await updateAuthor(Number(protectedId), first_name, last_name);
+      return res.redirect('/authors');
+    } else {
+      return res.status(400).send("Invalid action");
     }
   } catch (err) {
     console.error(err);

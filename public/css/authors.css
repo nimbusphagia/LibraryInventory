@@ -53,8 +53,13 @@ header {
   border-radius: 2px;
 }
 
-.author-item p {
-  margin: auto;
+.author-item .name {
+  display: flex;
+  gap: 4px;
+}
+
+.name p {
+  margin: 0;
 }
 
 .author-btns {
